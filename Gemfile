@@ -17,6 +17,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'clearance'
 # for security
 gem 'figaro'
+# omniauth!
+gem 'omniauth'
+# for external service provider authentication
+gem 'omniauth-facebook'
 # for country selection in forms
 gem 'country_select'
 # Use jquery as the JavaScript library
