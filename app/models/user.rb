@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   include Clearance::User
   has_many :authentications, :dependent => :destroy
 
+  def edit
+  end
+
   def self.create_with_auth_and_hash(authentication,auth_hash)
     create! do |u|
       u.firstname = auth_hash["info"]["first_name"]
