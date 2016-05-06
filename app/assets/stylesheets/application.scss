@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+   padding-top: 100px;
+   background: url("http://www.alux.com/wp-content/uploads/2014/07/Interior-Design-Idea-Urban-Apartment-Decorating-Style-8.jpg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+ .navbar-brand {
+     font-size: 40px;
+     font-family: 'Merriweather', serif;
+     color: #99003d;
+ }
+
+ .navbar-container {
+     padding: 20px 0 20px 0;
+ }
+
+ .navbar.navbar-fixed-top.fixed-theme {
+     background-color: #222;
+     border-color: #080808;
+     box-shadow: 0 0 5px rgba(0,0,0,.8);
+ }
+
+ .navbar-brand.fixed-theme {
+     font-size: 30px;
+ }
+
+ .navbar-container.fixed-theme {
+     padding: 0;
+ }
+
+ .navbar-brand.fixed-theme,
+ .navbar-container.fixed-theme,
+ .navbar.navbar-fixed-top.fixed-theme,
+ .navbar-brand,
+ .navbar-container{
+     transition: 0.8s;
+     -webkit-transition:  0.8s;
+ }
