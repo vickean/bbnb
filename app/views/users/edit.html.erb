@@ -1,4 +1,4 @@
 <h1>This is the edit page!</h1>
 <div>
-    <a href="/" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-home"></span> Home</a>
+    <%= link_to "Profile Page", user_path(current_user.id), :class => "btn btn-lg btn-info" %>
 </div>

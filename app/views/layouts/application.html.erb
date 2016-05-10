@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -13,7 +15,6 @@
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,900,700' rel='stylesheet' type='text/css'>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
   <title>BBnB | Bed, Breakfast and Business</title>
@@ -44,6 +45,18 @@
                           <% else -%>
                             <%= link_to t(".sign_in"), sign_in_path %>
                           <% end -%>
+                        </li>
+                        <li id="navbar-dropdown" class="dropdown">
+                          <% if signed_in? %>
+                            <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="button" id="user_name"><%= current_user.firstname %><span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                              <li><a href="<%= user_path(current_user.id) %>">Profile</a></li>
+                              <li><a href="#">item1</a></li>
+                              <li><a href="#">item2</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">item3</a></li>
+                            </ul>
+                          <% end %>
                         </li>
                         <li>
                           <% flash.each do |key, value| -%>
