@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
 
-  resources :listings, controller: "listings" 
+    resources :listings,
+      controller: "listings"
 
   end
 
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+
+  get "/listings" => "listings#public_index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

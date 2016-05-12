@@ -1,44 +1,44 @@
 <div class="text-field">
-  <%= form.label :email %>
+  <%= form.label :email, class: "white-text" %>
   <%= form.text_field :email, type: 'email', placeholder: "Email" %>
 </div>
 
 <div class="password-field">
-  <%= form.label :password %>
+  <%= form.label :password, class: "white-text" %>
   <%= form.password_field :password, placeholder: "Password" %>
 </div>
 
 <div>
-  <%= form.label :firstname, "First Name"%>
+  <%= form.label :firstname, "First Name", class: "white-text"%>
   <%= form.text_field :firstname, placeholder: "First Name" %>
 </div>
 
 <div>
-  <%= form.label :lastname, "Last Name"%>
+  <%= form.label :lastname, "Last Name", class: "white-text"%>
   <%= form.text_field :lastname, placeholder: "Last Name" %>
 </div>
 
 <div>
-  <%= form.label :birthday, "Birthday"%>
+  <%= form.label :birthday, "Birthday", class: "white-text"%>
   <%= form.date_select :birthday, start_year: Date.today.year - 100, end_year: Date.today.year %>
 </div>
 
 <div>
-  <%= form.label :phonenumber, "Contact Number"%>
+  <%= form.label :phonenumber, "Contact Number", class: "white-text"%>
   <%= form.text_field :phonenumber, placeholder: "Contact Number" %>
 </div>
 
 <div>
-  <%= form.label :description, "Description"%>
+  <%= form.label :description, "Description", class: "white-text"%>
   <%= form.text_field :description, placeholder: "Description" %>
 </div>
 
 <div>
-  <%= form.label :country, "Nationality"%>
+  <%= form.label :country, "Nationality", class: "white-text"%>
   <%= form.country_select :country %>
 </div>
 
 <div>
-  <%= form.label :gender, "Gender"%>
+  <%= form.label :gender, "Gender", class: "white-text"%>
   <%= form.select :gender, [["Male","M"],["Female","F"]], placeholder: "Gender" %>
 </div>

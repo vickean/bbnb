@@ -1,7 +1,48 @@
-<%= form.label :city %>
-<%= form.text_field :city%>
+<div>
+  <%= form.label :status, class: "white-text" %>
+  <%= form.text_field :status%>
+</div>
 
-<%= form.label :address %>
-<%= form.text_field :address %>
+<div>
+  <%= form.label :home_type, class: "white-text" %>
+  <%= form.text_field :home_type %>
+</div>
 
-<%= form.submit 'yay' %>
+<div>
+  <%= form.label :room_type, class: "white-text" %>
+  <%= form.text_field :room_type %>
+</div>
+
+<div>
+  <%= form.label :min_stay, class: "white-text" %>
+  <%= form.text_field :min_stay %>
+</div>
+
+<div>
+  <%= form.label :price_per_night, class: "white-text" %>
+  <%= form.text_field :price %>
+</div>
+
+<div>
+  <%= form.label :accomodates, class: "white-text" %>
+  <%= form.text_field :pax %>
+</div>
+
+<div>
+  <%= form.label :city, class: "white-text" %>
+  <%= form.text_field :city %>
+</div>
+
+<div>
+  <%= form.label :address, class: "white-text" %>
+  <%= form.text_field :address %>
+</div>
+
+<div>
+  <%= form.label :tags, class: "white-text" %>
+  <%= form.text_field :tags %>
+</div>
+
+<div>
+  <%= form.submit 'Edit This Listing', class: "btn btn-default btn-md" %>
+</div>

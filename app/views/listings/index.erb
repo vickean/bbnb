@@ -1,11 +1,13 @@
-<% @listings.each do |x| %>
-  <%= x.city %>
-  <%= x.address %>
-  <%= link_to 'Edit this listing', edit_user_listing_path(current_user, x) %>
-  <div data-no-turbolink>
+<h1 class="general-text-box">Your Lisitings</h1>
 
-    <%= link_to 'Delete this listing', user_listing_path(current_user, x), method: :delete %>
-  <br />
+<div class="general-text-box">
+
+  <% @listings.each do |x| %>
+    <hr>
+    <%= x.city %>
+    <%= x.address %>
+    <%= link_to 'Edit this listing', edit_user_listing_path(current_user, x) %>
+    <br />
+  <% end %>
+
 </div>
-
-<% end %>

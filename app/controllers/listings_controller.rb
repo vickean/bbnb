@@ -3,7 +3,12 @@ class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update]
 
   def index
+    @listings = Listing.where(user_id: current_user)
+  end
+
+  def public_index
     @listings = Listing.all
+    render :public_index
   end
 
   def new
@@ -15,7 +20,7 @@ class ListingsController < ApplicationController
     if @listing.save
       redirect_to user_listing_path(current_user, @listing)
     else
-      flash.now[:warning] = 'y u do dis'
+      flash.now[:warning] = 'Listing not created'
       render :new
     end
   end
@@ -28,17 +33,17 @@ class ListingsController < ApplicationController
 
   def update
     if @listing.update(user_params)
-      flash[:success] = 'yay'
+      flash[:success] = 'Listing created'
       redirect_to user_listing_path(current_user, @listing)
     else
-      flash.now[:warning] = 'y u do dis'
+      flash.now[:warning] = 'Listing updated'
       render :edit
     end
   end
 
   def destroy
     Listing.find(params[:id]).destroy
-    flash[:success] = 'deleted'
+    flash[:success] = 'Listing deleted'
     redirect_to root_path
   end
 

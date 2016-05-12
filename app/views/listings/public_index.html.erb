@@ -1,0 +1,15 @@
+<h1>Public Lisitings</h1>
+
+<div class="general-text-box">
+
+  <% @listings.each do |x| %>
+    <hr>
+    <%= x.city %>
+    <%= x.address %>
+    <% if signed_in? && current_user.id == x.user_id %>
+      <%= link_to 'Edit this listing', edit_user_listing_path(current_user, x) %>
+    <% end %>
+    <br />
+  <% end %>
+
+</div>

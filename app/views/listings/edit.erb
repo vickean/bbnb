@@ -1,5 +1,12 @@
-<h2>Edit listing</h2>
+<div class="general-text-box">
+    <h2>Edit listing</h2>
+</div>
 
-<%= form_for [current_user, @listing] do |form| %>
-  <%= render partial: 'listings/form', object: form %>
-<% end %>
+<div class="form-text-box">
+  <%= form_for [current_user, @listing] do |form| %>
+    <%= render partial: 'listings/form', object: form %>
+  <% end %>
+</div>
+<div>
+  <%= link_to 'Delete this listing', user_listing_path(current_user, params[:id]), method: :delete, class: "btn btn-default btn-md" %>
+</div>
