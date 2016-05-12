@@ -4,6 +4,9 @@
 
   <%= form_for [current_user, Listing.new] do |f| %>
     <%= render partial: 'listings/form', object: f %>
+    <div>
+      <%= f.submit 'Create Listing', class: "btn btn-default btn-md" %>
+    </div>
   <% end %>
 
 </div>

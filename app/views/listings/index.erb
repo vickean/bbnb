@@ -4,8 +4,8 @@
 
   <% @listings.each do |x| %>
     <hr>
-    <%= x.city %>
-    <%= x.address %>
+    <%= x.name %>
+    <%= x.description %>
     <%= link_to 'Edit this listing', edit_user_listing_path(current_user, x) %>
     <br />
   <% end %>

@@ -1,25 +1,35 @@
 <div>
-  <%= form.label :status, class: "white-text" %>
-  <%= form.text_field :status%>
+  <%= form.label :name, class: "white-text" %>
+  <%= form.text_field :name%>
+</div>
+
+<div>
+  <%= form.label :description, class: "white-text" %>
+  <%= form.text_field :description%>
+</div>
+
+<div>
+  <%= form.label :country, class: "white-text" %>
+  <%= form.country_select :country%>
 </div>
 
 <div>
   <%= form.label :home_type, class: "white-text" %>
-  <%= form.text_field :home_type %>
+  <%= form.select :home_type, ['Apartment', 'House', 'Bed & Breakfast'] %>
 </div>
 
 <div>
   <%= form.label :room_type, class: "white-text" %>
-  <%= form.text_field :room_type %>
+  <%= form.select :room_type, ['Entire home/apt', 'Private room', 'Shared room'] %>
 </div>
 
 <div>
-  <%= form.label :min_stay, class: "white-text" %>
-  <%= form.text_field :min_stay %>
+  <%= form.label "Minimum stay period (nights)", class: "white-text" %>
+  <%= form.number_field :min_stay, min: 1, max: 30 %>
 </div>
 
 <div>
-  <%= form.label :price_per_night, class: "white-text" %>
+  <%= form.label "Price per night (RM)", class: "white-text" %>
   <%= form.text_field :price %>
 </div>
 
@@ -41,8 +51,4 @@
 <div>
   <%= form.label :tags, class: "white-text" %>
   <%= form.text_field :tags %>
-</div>
-
-<div>
-  <%= form.submit 'Edit This Listing', class: "btn btn-default btn-md" %>
 </div>

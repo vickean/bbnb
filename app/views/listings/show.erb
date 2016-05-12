@@ -1,5 +1,8 @@
 <h1>This is one listing</h1>
-<%= @listing.city %>
-<%= @listing.address %>
-<%= link_to 'Edit this listing', edit_user_listing_path(current_user, @listing) %>
-<%= link_to 'Delete this listing', user_listing_path(current_user, @listing), method: :delete %>
+<div>
+  <%= @listing.name %><br>
+  <%= @listing.description %><br>
+  <% if signed_in? && current_user.id == @listing.user_id %>
+    <%= link_to 'Edit this listing', edit_user_listing_path(current_user, @listing) %>
+  <% end %>
+</div>

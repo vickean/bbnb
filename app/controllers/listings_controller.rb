@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 
-  before_action :find_listing, only: [:show, :edit, :update]
+  before_action :find_listing, only: [:show, :edit, :update, :public_show]
 
   def index
     @listings = Listing.where(user_id: current_user)
@@ -9,6 +9,10 @@ class ListingsController < ApplicationController
   def public_index
     @listings = Listing.all
     render :public_index
+  end
+
+  def public_show
+    render :public_show
   end
 
   def new
@@ -54,6 +58,6 @@ class ListingsController < ApplicationController
   end
 
    def user_params
-     params.require(:listing).permit(:address, :city)
+     params.require(:listing).permit(:address, :city, :name, :description, :country, :home_type, :room_type, :min_stay, :price, :pax, :tags)
    end
 end
