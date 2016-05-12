@@ -1,0 +1,4 @@
+<%= @listing.city %>
+<%= @listing.address %>
+<%= link_to 'Edit this listing', edit_user_listing_path(current_user, @listing) %>
+<%= link_to 'Delete this listing', user_listing_path(current_user, @listing), method: :delete %> 

@@ -19,8 +19,6 @@
 
   <title>BBnB | Bed, Breakfast and Business</title>
   <link rel="shortcut icon" href="http://tiendas3b.net/portal/images/logo.png" type="image/x-icon" />
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tag %>
 </head>
 <body>
   <nav id="header" class="navbar navbar-fixed-top">
@@ -52,7 +50,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                               <li><a href="<%= user_path(current_user.id) %>">Profile</a></li>
                               <li><a href="#">item1</a></li>
-                              <li><a href="#">item2</a></li>
+                              <li><%= link_to 'Create new listing', new_user_listing_path(current_user)%></li>
                               <li role="separator" class="divider"></li>
                               <li><a href="#">item3</a></li>
                             </ul>

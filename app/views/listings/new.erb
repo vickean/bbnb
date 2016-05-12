@@ -1,0 +1,5 @@
+<h2>New listing</h2>
+
+<%= form_for [current_user, Listing.new] do |f| %>
+  <%= render partial: 'listings/form', object: f %>
+<% end %>
