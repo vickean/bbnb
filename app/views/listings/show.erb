@@ -1,7 +1,51 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <h1>This is one listing</h1>
+
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <% a = @listing.image %>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% a.each_with_index do |x, index| %>
+        <li data-target="#myCarousel" data-slide-to="index" class=<%= index == 0 ? "active" : nil %>></li>
+      <% end %>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <% a.each_with_index do |x, index| %>
+
+        <div class=<%= index == 0 ? "item active" : "item" %> >
+          <img src="<%= x %>" width="460" height="345">
+        </div>
+
+      <% end %>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
 <div>
   <%= @listing.name %><br>
   <%= @listing.description %><br>
+  <% a = @listing.image %>
+  <% a.each do |x| %>
+    <img src="<%= x %>">
+  <% end %>
   <% if signed_in? && current_user.id == @listing.user_id %>
     <%= link_to 'Edit this listing', edit_user_listing_path(current_user, @listing) %>
   <% end %>

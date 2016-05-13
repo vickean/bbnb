@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :authentications, :dependent => :destroy
   has_many :listings, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+
   def edit
   end
 

@@ -58,6 +58,6 @@ class ListingsController < ApplicationController
   end
 
    def user_params
-     params.require(:listing).permit(:address, :city, :name, :description, :country, :home_type, :room_type, :min_stay, :price, :pax, :tags)
+     params.require(:listing).permit(:address, :city, :name, :description, :country, :home_type, :room_type, :min_stay, :price, :pax, :tags, {image: []})
    end
 end

@@ -59,7 +59,13 @@ var myNavBar = {
 myNavBar.init(  [
     "header",
     "header-container",
-    "brand"
+    "brand",
+    "navbar-text1",
+    "navbar-text2",
+    "navbar-text3",
+    "navbar-text4",
+    "navbar-text5",
+    "dropdownMenu1"
 ]);
 
 /**

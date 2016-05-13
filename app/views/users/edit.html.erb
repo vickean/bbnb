@@ -1,4 +1,21 @@
 <h1>This is the edit page!</h1>
+
+<div class="sign-up form-text-box">
+  <h2 class="white-text"><%= t(".title") %></h2>
+
+  <%= form_for current_user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit "Update"%>
+    </div>
+
+    <div class="other-links">
+      <%= link_to t(".sign_in"), sign_in_path %>
+    </div>
+  <% end %>
+</div>
+
 <div class="general-text-box">
     <%= link_to "Profile Page", user_path(current_user.id), :class => "btn btn-lg btn-info" %>
 </div>

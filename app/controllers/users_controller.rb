@@ -1,4 +1,15 @@
 class UsersController < Clearance::UsersController
+  def update
+    @user = User.find(params[:id])
+    @user.update(permit_params)
+    if @user.save
+      redirect_to @user
+    else
+      render 'edit'
+    end
+    
+  end
+
   private
   def user_from_params
     user_params = params[:user] || Hash.new
@@ -26,6 +37,6 @@ class UsersController < Clearance::UsersController
   end
 
   def permit_params
-    params.require(:user).permit(:email, :password, :firstname, :lastname, :phonenumber, :description, :country, :gender, "birthday(1i)", "birthday(2i)", "birthday(3i)")
+    params.require(:user).permit(:email, :password, :firstname, :lastname, :phonenumber, :description, :country, :gender, "birthday(1i)", "birthday(2i)", "birthday(3i)", :avatar)
   end
 end
