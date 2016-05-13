@@ -12,27 +12,36 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <% a.each_with_index do |x, index| %>
-        <li data-target="#myCarousel" data-slide-to="index" class=<%= index == 0 ? "active" : nil %>></li>
+        <% if index == 0 %>
+         <% cls = 'active' %>
+        <% else %>
+          <% cls = nil %>
+        <% end %>
+        <li class="<%= cls %>" data-target="#myCarousel" data-slide-to=<%= h index -%> ></li>
       <% end %>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <% a.each_with_index do |x, index| %>
-
-        <div class=<%= index == 0 ? "item active" : "item" %> >
-          <img src="<%= x %>" width="460" height="345">
+        <% if index == 0 %>
+         <% cls = 'item active' %>
+        <% else %>
+          <% cls = 'item' %>
+        <% end %>
+        <div class="<%= cls %>" >
+          <img src="<%= x.listing_page %>" width="460" height="345">
         </div>
 
       <% end %>
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -42,10 +51,6 @@
 <div>
   <%= @listing.name %><br>
   <%= @listing.description %><br>
-  <% a = @listing.image %>
-  <% a.each do |x| %>
-    <img src="<%= x %>">
-  <% end %>
   <% if signed_in? && current_user.id == @listing.user_id %>
     <%= link_to 'Edit this listing', edit_user_listing_path(current_user, @listing) %>
   <% end %>
