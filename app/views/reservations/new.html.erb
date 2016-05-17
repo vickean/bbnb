@@ -1,0 +1,10 @@
+<h1>New Reservation</h1 class="general-text-box">
+
+<%= form_for @reservation, url: listing_reservations_path(@listing_id) do |form| %>
+  <%= render partial: '/reservations/form', object: form %>
+
+  <div class="submit-field">
+    <%= form.submit "Create Reservation"%>
+  </div>
+
+<% end %>

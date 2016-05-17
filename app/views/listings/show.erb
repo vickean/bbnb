@@ -1,4 +1,4 @@
-<meta charset="utf-8">
+<!-- <meta charset="utf-8"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -52,6 +52,12 @@
   <%= @listing.name %><br>
   <%= @listing.description %><br>
   <% if signed_in? && current_user.id == @listing.user_id %>
-    <%= link_to 'Edit this listing', edit_user_listing_path(current_user, @listing) %>
+    <%= link_to 'Edit this listing', edit_listing_path(@listing.id) %>
+  <% end %>
+</div>
+
+<div>
+  <% if signed_in? && current_user.id != @listing.user_id %>
+    <%= link_to 'Make a Reservation!', new_listing_reservation_path(@listing.id) %>
   <% end %>
 </div>

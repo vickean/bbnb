@@ -7,7 +7,7 @@ class UsersController < Clearance::UsersController
     else
       render 'edit'
     end
-    
+
   end
 
   private
@@ -22,6 +22,7 @@ class UsersController < Clearance::UsersController
     description = user_params.delete(:description)
     country = user_params.delete(:country)
     gender = user_params.delete(:gender)
+    avatar = user_params.delete(:avatar)
 
     Clearance.configuration.user_model.new(user_params).tap do |user|
       user.email = email
@@ -33,6 +34,7 @@ class UsersController < Clearance::UsersController
       user.description = description
       user.country = country
       user.gender = gender
+      user.avatar = avatar
     end
   end
 

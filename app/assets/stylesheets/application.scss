@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datepicker3
  */
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:500);
 @import url(https://fonts.googleapis.com/css?family=Prosto+One);
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
  body {
    padding-top: 100px;

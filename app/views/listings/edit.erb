@@ -3,13 +3,13 @@
 </div>
 
 <div class="form-text-box">
-  <%= form_for [current_user, @listing] do |form| %>
+  <%= form_for @listing do |form| %>
     <%= render partial: 'listings/form', object: form %>
     <div>
       <%= form.submit 'Edit Listing', class: "btn btn-default btn-md" %>
     </div>
   <% end %>
   <div>
-    <%= link_to 'Delete this listing', user_listing_path(current_user, params[:id]), method: :delete, class: "btn btn-default btn-md" %>
+    <%= link_to 'Delete this listing', listing_path(params[:id]), method: :delete, class: "btn btn-default btn-md" %>
   </div>
 </div>

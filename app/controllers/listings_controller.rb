@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.new(user_params)
 
     if @listing.save
-      redirect_to user_listing_path(current_user, @listing)
+      redirect_to listing_path(@listing)
     else
       flash.now[:warning] = 'Listing not created'
       render :new
@@ -38,7 +38,7 @@ class ListingsController < ApplicationController
   def update
     if @listing.update(user_params)
       flash[:success] = 'Listing created'
-      redirect_to user_listing_path(current_user, @listing)
+      redirect_to listing_path(@listing)
     else
       flash.now[:warning] = 'Listing updated'
       render :edit
